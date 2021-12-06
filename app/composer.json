@@ -1,0 +1,17 @@
+{
+    "name": "flogigi/posthere",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "require": {
+        "michelf/php-markdown": "^1.9"
+    },
+    "authors": [
+        {
+            "name": "Giselle MATIAS",
+            "email": "giselle.magalong@gmail.com"
+        }
+    ]
+}
