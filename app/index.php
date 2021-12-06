@@ -3,6 +3,3 @@
 echo \App\Test::test();
 
 ?>
-
-
-hello
