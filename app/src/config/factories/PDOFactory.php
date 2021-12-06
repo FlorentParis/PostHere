@@ -1,10 +1,10 @@
 <?php
-namespace app\src\config\factories;
+namespace app\config\factories;
 
 use PDO;
 
 class PDOFactory{
-    public static function getMysqlConnection(){
-        return new PDO('mysql:host=localhost;dbname=posthere', 'root', 'example');
+    public static function getMysqlConnection(): PDO{
+        return new PDO('mysql:host=db;dbname=posthere', 'root', 'example');
     }
 }
