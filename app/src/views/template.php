@@ -1,8 +1,9 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title> <?php $title; ?> </title>
+    <title><?= $title;?> </title>
 </head>
 <body>
 <?= $content;?>

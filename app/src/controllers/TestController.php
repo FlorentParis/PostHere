@@ -4,12 +4,12 @@ namespace App\controllers;
 use App\controllers\BaseController;
 
 class TestController extends BaseController{
-    public function executeTest()
+    public function executeAccueil()
     {
         $this->render(
-            'test.php',
+            'Accueil.php',
             [],
-            'Test'
+            'Accueil'
         );
     }
     public function executeTest1()
