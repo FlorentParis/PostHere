@@ -3,4 +3,5 @@
     <route path="/" action="accueil" controller="TestController"/>
     <route path="test" action="test1" controller="TestController"/>
     <route path="inscription" action="register" controller="RegisterController"/>
+    <route path="connexion" action="login" controller="LoginController"/>
 </routes>

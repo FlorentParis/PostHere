@@ -1,5 +1,8 @@
 <?php
-class ConnexionControlleur
+
+namespace App\controllers;
+
+class LoginController extends BaseController
 {
     public function login()
     {
@@ -16,13 +19,17 @@ class ConnexionControlleur
         }
     }
 
-    public function register()
-    {
-        
-    }
-
     public function disconnect()
     {
         $_SESSION['user_actual'] = '';
+    }
+
+    public function executeLogin()
+    {
+        $this->render(
+            'Login.php',
+            [],
+            'Connexion'
+        );
     }
 }
