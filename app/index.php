@@ -1,7 +1,8 @@
-<?php require './vendor/autoload.php';
+<?php
+require './vendor/autoload.php';
 
-echo \App\controllers\BaseController::test();
-
+//echo \App\controllers\BaseController::test();
+$router = new \App\config\routes\Router();
+$router->getController();
 ?>
-
-hello
+Index
