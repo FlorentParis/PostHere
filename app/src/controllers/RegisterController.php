@@ -21,7 +21,7 @@ class RegisterController extends BaseController
         $name = $_POST['user_name'];
         $firstName = $_POST['user_firstname'];
         $email = $_POST['user_mail'];
-        isset($_POST['user_admin'])?$admin = true : $admin = false;
+        $admin = $_POST['user_admin'];
         $password = $_POST['user_pswd'];
         $verif_password = $_POST['verif_pswd'];
 
