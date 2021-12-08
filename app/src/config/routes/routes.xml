@@ -8,5 +8,8 @@
     <route path="connexion" action="login" controller="LoginController"/>
     <route path="sendlogin" action="sendlogin" controller="LoginController"/>
 
+    <!-- Btn disconnect -->
+    <route path="disconnect" action="disconnect" controller="LoginController"/>
+
     <route path="foobar" action="foobar" controller="TestController"/>
 </routes>

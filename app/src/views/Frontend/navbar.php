@@ -12,9 +12,13 @@
         <!-- If user -> deconnect -->
         <button>Log-In</button>
         <button>Sign-Up</button>
-        <!-- If one user is connected -->
-        <button>
-            <img src="assets/logout.svg"/>
-        </button>
+
+        <?php if($_SESSION['user_actual']){ ?>
+            <!-- If one user is connected -->
+            <a href="disconnect">
+                <img src="assets/logout.svg"/>
+            </a>
+        <?php } ?>
+
     </ul>
 </nav>

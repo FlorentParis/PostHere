@@ -18,16 +18,17 @@ class LoginController extends BaseController
                 $_SESSION['user_actual'] = $connexion->userExist($email, $mdp);
                 header('Location: /');
             } else {
-                header('Location: /');
+                header('Location: /test');
             }
         } else {
             header('Location: /inscription');
         }
     }
 
-    public function disconnect()
+    public function executeDisconnect()
     {
-        $_SESSION['user_actual'] = '';
+        unset($_SESSION['user_actual']);
+        header('Location: /');
     }
 
     public function executeLogin()

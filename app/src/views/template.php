@@ -8,4 +8,8 @@
 <body>
     <?php include 'Frontend/navbar.php'; ?>
     <?= $content;?>
+    <?php if($_SESSION['user_actual']) {
+        echo $_SESSION['user_actual']['created_at'];
+    }
+    ?>
 </html>
