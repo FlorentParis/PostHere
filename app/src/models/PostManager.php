@@ -8,9 +8,18 @@ class PostManager extends BaseManager
 {
     public function getAllPosts(): array
     {
-        $search = $this->pdo->prepare('SELECT * FROM posts');
-        $search->execute();
-        return $search->fetchAll();
+        $result = [];
+        $posts = $this->pdo->prepare('SELECT * FROM posts');
+        $posts->execute();
+        foreach($posts as $post){
+            $element = new Post();
+            $element->setId($post['id']);
+            $element->setTitle($post['title']);
+            $element->setContent($post['content']);
+            $element->setAuthorId($post['author_id']);
+            array_push($result, $element);
+        }
+        return $result;
     }
 
     public function getPostById(int $id): Post

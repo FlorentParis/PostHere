@@ -1,8 +1,9 @@
 <div>
+    <?= $posts ?>
     <?php foreach($posts as $post) { ?>
 
         <div>
-            <span><?= $post ?></span>
+            <span><?= $post->getTitle() ?></span>
         </div>
 
     <?php } ?>

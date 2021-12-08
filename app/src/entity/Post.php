@@ -8,10 +8,16 @@ class Post {
     private string $content;
     private string $author_id;
 
-    public function getId(): int
+    public function getId()
     {
         return $this->id;
     }
+
+    public function setId(int $id): int
+    {
+        return $this->id = $id;
+    }
+
 
     public function getTitle(){
         return $this->title;
