@@ -1,7 +1,7 @@
 <?php
 namespace App\controllers;
 
-use app\config\factories\PDOFactory;
+use App\config\factories\PDOFactory;
 use App\controllers\BaseController;
 use App\models\ConnexionManager;
 

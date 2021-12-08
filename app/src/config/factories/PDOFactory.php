@@ -1,5 +1,5 @@
 <?php
-namespace app\config\factories;
+namespace App\config\factories;
 
 use PDO;
 

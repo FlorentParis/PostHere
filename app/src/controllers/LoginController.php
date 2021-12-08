@@ -1,8 +1,10 @@
 <?php
 
 namespace App\controllers;
+
+use App\config\factories\PDOFactory;
+use App\controllers\BaseController;
 use App\models\ConnexionManager;
-use app\config\factories\PDOFactory;
 
 class LoginController extends BaseController
 {
