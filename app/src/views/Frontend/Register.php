@@ -1,12 +1,15 @@
 <h1>Inscription</h1>
-<form action="" method="post">
+<?php
+var_dump($_SESSION);
+?>
+<form action="sendinscription" method="post">
     <div>
         <label for="name">Nom :</label>
         <input type="text" id="name" name="user_name">
     </div>
     <div>
         <label for="name">Prénom :</label>
-        <input type="text" id="name" name="user_name">
+        <input type="text" id="firstName" name="user_firstname">
     </div>
     <div>
         <label for="mail">E-mail :</label>
@@ -14,15 +17,16 @@
     </div>
     <div>
         <label for="admin">Admin ?</label>
-        <input type="checkbox" id="admin" name="user_admin">
+        <input type="hidden" class="admin" name="user_admin" value="0"/>
+        <input type="checkbox" class="admin" name="user_admin" value="1">
     </div>
     <div>
         <label for="mdp">Mot de passe :</label>
-        <input type="password" id="mdp" name="user_mdp">
+        <input type="password" id="mdp" name="user_pswd">
     </div>
     <div>
         <label for="vmdp">Verifier mot de passe :</label>
-        <input type="password" id="vmdp" name="user_vmdp">
+        <input type="password" id="vmdp" name="verif_pswd">
     </div>
     <button>S'inscrire</button>
 </form>

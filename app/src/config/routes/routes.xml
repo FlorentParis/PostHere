@@ -3,7 +3,7 @@
     <route path="/" action="home" controller="HomeController"/>
     <!-- INSCRIPTION -->
     <route path="inscription" action="register" controller="RegisterController"/>
-    <route path="forminscription" action="addUser" controller="RegisterController"/>
+    <route path="sendinscription" action="sendForm" controller="RegisterController"/>
     <route path="connexion" action="login" controller="LoginController"/>
     <route path="sendlogin" action="sendlogin" controller="LoginController"/>
 
