@@ -2,7 +2,7 @@
     <?php foreach($posts as $post) { ?>
 
         <div>
-            <span><?= $post->title ?></span>
+            <span><?= $post ?></span>
         </div>
 
     <?php } ?>

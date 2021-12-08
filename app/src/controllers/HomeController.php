@@ -4,6 +4,7 @@ namespace App\controllers;
 use App\config\factories\PDOFactory;
 use App\controllers\BaseController;
 use App\models\ConnexionManager;
+use App\models\PostManager;
 
 class HomeController extends BaseController{
 
