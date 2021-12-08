@@ -1,7 +1,9 @@
 <?php
 namespace App\controllers;
 
+use app\config\factories\PDOFactory;
 use App\controllers\BaseController;
+use App\models\ConnexionManager;
 
 class TestController extends BaseController{
     public function executeAccueil()
@@ -19,5 +21,12 @@ class TestController extends BaseController{
             [],
             'Test1'
         );
+    }
+
+    public function executeFoobar()
+    {
+        $manager = new ConnexionManager(PDOFactory::getMysqlConnection());
+        $manager->userExist('foo', 'bar');
+        header('Location: /');
     }
 }

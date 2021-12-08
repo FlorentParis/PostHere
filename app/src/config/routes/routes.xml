@@ -2,6 +2,10 @@
 <routes>
     <route path="/" action="accueil" controller="TestController"/>
     <route path="test" action="test1" controller="TestController"/>
-    <route path="inscription" action="register" controller="RegisterController"/>
+    <!-- INSCRIPTION -->
+    <route path="inscription" action="registerView" controller="RegisterController"/>
+    <route path="forminscription" action="addUser" controller="RegisterController"/>
     <route path="connexion" action="login" controller="LoginController"/>
+
+    <route path="foobar" action="foobar" controller="TestController"/>
 </routes>
