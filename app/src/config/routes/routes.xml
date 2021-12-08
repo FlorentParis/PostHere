@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <routes>
-    <route path="/" action="accueil" controller="TestController"/>
-    <route path="test" action="test1" controller="TestController"/>
+    <route path="/" action="home" controller="HomeController"/>
     <!-- INSCRIPTION -->
     <route path="inscription" action="register" controller="RegisterController"/>
     <route path="forminscription" action="addUser" controller="RegisterController"/>
@@ -10,6 +9,4 @@
 
     <!-- Btn disconnect -->
     <route path="disconnect" action="disconnect" controller="LoginController"/>
-
-    <route path="foobar" action="foobar" controller="TestController"/>
 </routes>
