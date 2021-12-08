@@ -1,1 +1,1 @@
-<h1>Vue Accueil</h1>
+<h1>Accueil</h1>

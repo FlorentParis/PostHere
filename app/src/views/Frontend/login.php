@@ -1,5 +1,5 @@
 <h1>Connexion</h1>
-<form action="">
+<form action="sendlogin" method="post">
     <div>
         <label for="mail">E-mail :</label>
         <input type="email" id="mail" name="user_mail">

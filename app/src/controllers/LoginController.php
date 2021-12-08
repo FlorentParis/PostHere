@@ -1,21 +1,25 @@
 <?php
 
 namespace App\controllers;
+use App\models\ConnexionManager;
+use app\config\factories\PDOFactory;
 
 class LoginController extends BaseController
 {
-    public function login()
+    public function executeSendlogin()
     {
-        if ( isset($_POST['email']) && isset($_POST['mdp']) ){
-            $email = $_POST['email'];
-            $mdp = $_POST['mdp'];
-            $connexion = new ConnexionManager();
+        if ( isset($_POST['user_mail']) && isset($_POST['user_mdp']) ){
+            $email = $_POST['user_mail'];
+            $mdp = $_POST['user_mdp'];
+            $connexion = new ConnexionManager(PDOFactory::getMysqlConnection());
             if ($connexion->userExist($email, $mdp)) {
                 $_SESSION['user_actual'] = $connexion->userExist($email, $mdp);
-                include 'app/views/espace_membre.php';
+                header('Location: /');
             } else {
-                include 'app/views/authentification.php';
+                header('Location: /');
             }
+        } else {
+            header('Location: /inscription');
         }
     }
 
