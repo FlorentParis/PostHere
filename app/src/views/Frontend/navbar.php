@@ -14,7 +14,7 @@
 
         <?php if($_SESSION['user_actual']){ ?>
             <!-- If one user is connected -->
-            <li>Write article</li>
+            <a href="createpost">Write Post</a>
             <li>Account</li>
         <?php } ?>
 

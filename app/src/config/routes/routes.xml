@@ -12,6 +12,13 @@
     <!-- LISTE UTILISATEUR -->
     <route path="listuser" action="showList" controller="UserListController"/>
     <route path="deleteuser" action="deleteUser" controller="UserListController" params="id"/>
-    <!-- VIEW POST -->
+    <!-- POST -->
     <route path="post" action="showPost" controller="PostController" params="id"/>
+    <route path="createpost" action="createPost" controller="PostController"/>
+    <route path="sendcreatepost" action="sendcreatepost" controller="PostController"/>
+    <route path="modifypost" action="modifyPost" controller="PostController" params="id"/>
+    <route path="deletepost" action="deletePost" controller="PostController" params="id"/>
+
+    <!-- API -->
+    <route path="api/posts" action="showPosts" controller="ApiController"/>
 </routes>

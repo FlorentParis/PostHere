@@ -24,8 +24,8 @@ class PostManager extends BaseManager
 
     public function createPost(Post $post)
     {
-        // TODO - create post
-        return true;
+        $result = $this->pdo->prepare("INSERT INTO `posts` (title, content, author_id) VALUES (".$post->getTitle().",".$post->getContent().",".$post->getAuthorId().")");
+        $result->execute();
     }
 
     public function updatePost(Post $post)
@@ -33,8 +33,9 @@ class PostManager extends BaseManager
         // TODO - getPostById($post->getId())
     }
 
-    public function deletePostById(int $id): bool
+    public function deletePostById(int $id)
     {
-        // TODO - Delete post
+        $query = $this->pdo->prepare('DELETE FROM posts WHERE id = ?');
+        $query->execute(array($id));
     }
 }

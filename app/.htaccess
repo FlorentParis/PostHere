@@ -3,4 +3,6 @@ RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-f
 #RewriteCond %{REQUEST_FILENAME} !-d
 
+RewriteRule ^api/([a-z0-9-]+)$ index.php?path=api/$1 [QSA,NC]
+
 RewriteRule ^([a-z0-9-]+)/?([0-9]*)$ index.php?path=$1&id=$2 [QSA,NC]
