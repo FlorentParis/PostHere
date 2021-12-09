@@ -21,4 +21,10 @@ class UserManager extends BaseManager
         $user = $search->fetch();
         return $user;
     }
+
+    public function deleteUser(int $id){
+        $query = $this->pdo->prepare('DELETE FROM users WHERE id = ?');
+        $query->execute(array($id));
+        return $query;
+    }
 }

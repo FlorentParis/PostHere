@@ -13,6 +13,7 @@ class UserListController extends BaseController
     {
         $user_list = new UserManager(PDOFactory::getMysqlConnection());
         $user_list = $user_list->getAllUser();
+        //var_dump($user_list);
         //TODO - SI API return $user_list en json
         $this->render(
             'UserList.php',
@@ -21,5 +22,11 @@ class UserListController extends BaseController
             ],
             'LISTE'
         );
+    }
+
+    public function executeDeleteUser(){
+        $user = new UserManager(PDOFactory::getMysqlConnection());
+        $deleteuser = $user->deleteUser($this->params['id']);
+        header('Location: /listuser');
     }
 }
