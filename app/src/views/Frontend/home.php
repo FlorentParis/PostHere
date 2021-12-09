@@ -1,12 +1,15 @@
-<div>
-    <?= $posts ?>
+<div class="px-4">
     <?php foreach($posts as $post) { ?>
 
-        <div>
-            <span><?= $post->getTitle() ?></span>
-            <?php 
-                var_dump($userManager->getUserById($post->getAuthorId()));
-            ?>
+        <div class="border mb-2 p-2">
+            <div>
+                <div>
+                    <span><?= $post->getTitle() ?></span>
+                    <?= $userManager->getUserById($post->getAuthorId())->getFirstName(); ?>
+                </div>
+                <?= date('\L\e\ d/M/Y \à\ H:i:s.', strtotime($post->getCreatedAt())) ?>
+            </div>
+            <?= substr($post->getContent(), 0, rand(150, 200)) . '...' ?>
         </div>
 
     <?php } ?>

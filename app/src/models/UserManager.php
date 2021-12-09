@@ -17,13 +17,8 @@ class UserManager extends BaseManager
     {
         $search = $this->pdo->prepare('SELECT * FROM users WHERE id = ?');
         $search->execute(array($id));
-        $user = new User();
-        $user->setId($search['id']);
-        $user->setName($search['name']);
-        $user->setFirstName($search['first_name']);
-        $user->setEmail($search['email']);
-        $user->setPassword($search['password']);
-        $user->setAdmin($search['admin']);
+        $search->setFetchMode(\PDO::FETCH_CLASS, User::class);
+        $user = $search->fetch();
         return $user;
     }
 }
