@@ -10,9 +10,14 @@ class User {
     private string $password;
     private bool $admin;
 
-    public function getId(): int
+    public function getId()
     {
         return $this->id;
+    }
+
+    public function setId(int $id): int
+    {
+        $this->id = $id;
     }
 
     public function getName(){

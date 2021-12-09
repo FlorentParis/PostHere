@@ -4,6 +4,7 @@
 
         <div>
             <span><?= $post->getTitle() ?></span>
+            <?=   ?>
         </div>
 
     <?php } ?>

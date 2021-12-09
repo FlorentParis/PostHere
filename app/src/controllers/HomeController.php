@@ -5,6 +5,7 @@ use App\config\factories\PDOFactory;
 use App\controllers\BaseController;
 use App\models\ConnexionManager;
 use App\models\PostManager;
+use App\models\UserManager;
 
 class HomeController extends BaseController{
 
@@ -12,6 +13,8 @@ class HomeController extends BaseController{
     {
         $postManager = new PostManager(PDOFactory::getMysqlConnection());
         $posts = $postManager->getAllPosts();
+
+        $userManager = new UserManager(PDOFactory::getMysqlConnection());
 
         $this->render(
             'home.php',
