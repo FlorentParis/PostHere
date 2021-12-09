@@ -5,7 +5,7 @@
     </div>
     <ul class="d-flex list-unstyled gap-4 mb-0">
         <!-- If user is on post -->
-        <li>All articles</li>
+        <a href="/">All articles</a>
 
         <?php if($_SESSION['user_actual']['admin'] == 1) { ?>
             <!-- If user is on post -->

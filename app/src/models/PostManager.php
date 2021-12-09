@@ -15,7 +15,11 @@ class PostManager extends BaseManager
 
     public function getPostById(int $id): Post
     {
-        // TODO - Posts by Id
+        $search = $this->pdo->prepare('SELECT * FROM posts WHERE id = ?');
+        $search->execute(array($id));
+        $search->setFetchMode(\PDO::FETCH_CLASS, Post::class);
+        $post = $search->fetch();
+        return $post;
     }
 
     public function createPost(Post $post)

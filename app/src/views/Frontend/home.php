@@ -10,6 +10,7 @@
                 <?= date('\L\e\ d/M/Y \à\ H:i:s.', strtotime($post->getCreatedAt())) ?>
             </div>
             <?= substr($post->getContent(), 0, rand(150, 200)) . '...' ?>
+            <?php echo '<a href="post/'.$post->getId().'">Lien</a>'; ?>
         </div>
 
     <?php } ?>

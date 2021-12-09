@@ -11,4 +11,6 @@
     <route path="disconnect" action="disconnect" controller="LoginController"/>
     <!-- LISTE UTILISATEUR -->
     <route path="listuser" action="showList" controller="UserListController"/>
+    <!-- VIEW POST -->
+    <route path="post" action="showPost" controller="PostController" params="id"/>
 </routes>
