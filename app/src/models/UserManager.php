@@ -6,9 +6,11 @@ use App\entity\User;
 
 class UserManager extends BaseManager 
 {
-    public function getAllUsers(): array
+    public function getAllUser(): array
     {
-        /* Return */
+        $query = $this->pdo->prepare('SELECT * FROM users');
+        $query->execute();
+        return $query->fetchAll(\PDO::FETCH_CLASS, User::class);
     }
 
     public function getUserById(int $id): User

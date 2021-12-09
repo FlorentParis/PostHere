@@ -6,6 +6,8 @@ use DOMDocument;
 
 class Router
 {
+    //TODO public function getView()
+
     public function getController()
     {
         $xml = new DOMDocument();
@@ -25,7 +27,9 @@ class Router
                         $params[$param] = $_GET[$param];
                     }
                 }
+                //TODO no return controller => just new instance which executes, return view
                 return new $controllerClass($action, $params);
+                //TODO render view with data
             }
         }
        return new ErrorController('error404');

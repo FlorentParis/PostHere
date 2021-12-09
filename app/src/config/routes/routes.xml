@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <routes>
     <route path="/" action="home" controller="HomeController"/>
+    <!-- INSCRIPTION -->
     <route path="inscription" action="register" controller="RegisterController"/>
     <route path="sendinscription" action="sendForm" controller="RegisterController"/>
+    <!-- CONNEXION -->
     <route path="connexion" action="login" controller="LoginController"/>
     <route path="sendlogin" action="sendlogin" controller="LoginController"/>
+    <!-- DECONNEXION -->
     <route path="disconnect" action="disconnect" controller="LoginController"/>
+    <!-- LISTE UTILISATEUR -->
+    <route path="listuser" action="showList" controller="UserListController"/>
 </routes>

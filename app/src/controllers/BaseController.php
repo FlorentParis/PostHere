@@ -18,6 +18,7 @@ abstract class BaseController
         }
     }
 
+    //TODO API: send data only
     public function render(string $template, array $arguments, string $title)
     {
         $view = $this->viewsDir . $template;
