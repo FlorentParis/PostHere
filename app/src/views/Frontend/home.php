@@ -5,7 +5,7 @@
         <div>
             <span><?= $post->getTitle() ?></span>
             <?php 
-                echo $userManager->getUserById($post->getAuthorId());
+                var_dump($userManager->getUserById($post->getAuthorId()));
             ?>
         </div>
 

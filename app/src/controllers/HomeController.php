@@ -19,7 +19,8 @@ class HomeController extends BaseController{
         $this->render(
             'home.php',
             [
-                'posts' => $posts
+                'posts' => $posts,
+                'userManager' => $userManager
             ],
             'Accueil'
         );

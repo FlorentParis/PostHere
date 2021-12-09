@@ -14,7 +14,7 @@ class UserManager extends BaseManager
     public function getUserById(int $id): User
     {
         $search = $this->pdo->prepare('SELECT * FROM users WHERE id = ?');
-        $search->execute($id);
+        $search->execute(array($id));
         $user = new User();
         $user->setId($search['id']);
         $user->setName($search['name']);
