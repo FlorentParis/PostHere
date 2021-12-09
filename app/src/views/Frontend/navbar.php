@@ -1,11 +1,16 @@
 <nav class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 px-4 mb-4 border-bottom bg-dark text-white">
-    <div>
+    <div class="fw-bold fs-5">
         <span>Post</span>
         <span class="text-primary">.Here</span>
     </div>
     <ul class="d-flex list-unstyled gap-4 mb-0">
         <!-- If user is on post -->
         <li>All articles</li>
+
+        <?php if($_SESSION['user_actual']['admin'] == 1) { ?>
+            <!-- If user is on post -->
+            <a href="listuser">List User</a>
+        <?php } ?>
 
         <?php if($_SESSION['user_actual']){ ?>
             <!-- If one user is connected -->
