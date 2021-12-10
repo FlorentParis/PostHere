@@ -20,8 +20,8 @@
 
         <?php if($_SESSION['user_actual'] == null){ ?>
             <!-- If user -> deconnect -->
-            <a href="connexion">Log-In</a>
-            <a href="inscription">Sign-Up</a>
+            <a href="/connexion">Log-In</a>
+            <a href="/inscription">Sign-Up</a>
         <?php } ?>
 
         <?php if($_SESSION['user_actual']){ ?>

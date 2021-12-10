@@ -3,6 +3,8 @@ namespace App\controllers;
 
 use App\config\factories\PDOFactory;
 use App\controllers\BaseController;
+use App\entity\Comment;
+use App\models\CommentManager;
 use App\models\PostManager;
 use App\models\UserManager;
 use App\entity\Post;
@@ -13,14 +15,16 @@ class PostController extends BaseController
     {
         $postManager = new PostManager(PDOFactory::getMysqlConnection());
         $post = $postManager->getPostById($this->params['id']);
-
+        $commentManager = new CommentManager(PDOFactory::getMysqlConnection());
+        $allComment = $commentManager->getAllComments($this->params['id']);
         $userManager = new UserManager(PDOFactory::getMysqlConnection());
 
         $this->render(
             'post.php',
             [
                 'post' => $post,
-                'userManager' => $userManager
+                'userManager' => $userManager,
+                'comments' => $allComment
             ],
             $post->getTitle()
         );

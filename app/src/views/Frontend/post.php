@@ -26,10 +26,12 @@
     </div>
     <div><?= $post->getContent() ?></div>
 </div>
+<?php if($_SESSION['user_actual']){?>
 <div class="m-4 border p-2">
     <h3>Ecrire un commentaire</h3>
     <div class="d-flex justify-content-between">
-        <form action="sendCommentaire">
+        <form action="/sendcommentaire" method="post">
+            <input type="hidden" name="post_id" value="<?= $post->getId()?>">
             <div>
                 <label for="content">Votre commentaire</label>
                 <textarea name="content" class="w-100"></textarea>
@@ -37,4 +39,19 @@
             <button>Envoyer</button>
         </form>
     </div>
+</div>
+<?php }?>
+<div class="px-4">
+    <?php foreach($comments as $comment) { ?>
+
+        <div class="border mb-2 p-2">
+            <div>
+                <div>
+                    <?= $userManager->getUserById($post->getAuthorId())->getFirstName(); ?>
+                </div>
+                <?= date('\L\e\ d/M/Y \à\ H:i:s.', strtotime($post->getCreatedAt())) ?>
+            </div>
+            <?= substr($comment->getContent(), 0, rand(150, 200)) . '...' ?>
+        </div>
+    <?php } ?>
 </div>

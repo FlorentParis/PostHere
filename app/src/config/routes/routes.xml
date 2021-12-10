@@ -20,7 +20,8 @@
     <route path="sendcreatepost" action="sendcreatepost" controller="PostController"/>
     <route path="modifypost" action="modifyPost" controller="PostController" params="id"/>
     <route path="deletepost" action="deletePost" controller="PostController" params="id"/>
-
+    <!-- COMMENTAIRES  -->
+    <route path="sendcommentaire" action="createComment" controller="CommentController" />
     <!-- API -->
     <route path="api/posts" action="showPosts" controller="ApiController"/>
 </routes>
