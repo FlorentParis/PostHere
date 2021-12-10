@@ -9,6 +9,9 @@
                 </div>
                 <?= date('\L\e\ d/M/Y \à\ H:i:s.', strtotime($post->getCreatedAt())) ?>
             </div>
+            <?php if($post->getImage() != null) {
+                echo $post->getImage();
+            } ?>
             <?= substr($post->getContent(), 0, rand(150, 200)) . '...' ?>
             <?php echo '<a href="post/'.$post->getId().'">Lien</a>'; ?>
         </div>
