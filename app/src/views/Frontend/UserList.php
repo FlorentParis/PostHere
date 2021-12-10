@@ -25,7 +25,7 @@
                 <td><?= $user->getEmail()?></td>
                 <td><?= $user->getPassword()?></td>
                 <td><?= $user->getAdmin() == 1?'x':''?></td>
-                <td></td>
+                <td><?= $user->getCreatedAt()?></td>
                 <td>
                     <?= '<a href="modifuser/'.$user->getId().'"class="text-decoration-none">';?>
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">

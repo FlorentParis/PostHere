@@ -2,7 +2,7 @@
 <?php
 var_dump($_SESSION);
 ?>
-<form action="sendinscription" method="post">
+<form action="sendregister" method="post">
     <div>
         <label for="name">Nom :</label>
         <input type="text" id="name" name="user_name">

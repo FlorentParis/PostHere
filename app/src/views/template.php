@@ -9,8 +9,6 @@
 </head>
 <body>
     <?php include 'Frontend/navbar.php'; ?>
-    <?= $content;?>
-
     <?php if (\App\config\Utils\Flash::hasFlash('success')): ?>
         <div class="alert alert-success" role="alert">
             <?= \App\config\Utils\Flash::getFlash('success'); ?>
@@ -22,4 +20,5 @@
             <?= \App\config\Utils\Flash::getFlash('alert'); ?>
         </div>
     <?php endif; ?>
+    <?= $content;?>
 </html>

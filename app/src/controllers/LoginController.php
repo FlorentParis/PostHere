@@ -27,6 +27,7 @@ class LoginController extends BaseController
 
     public function executeDisconnect()
     {
+        //TODO clear param url
         unset($_SESSION['user_actual']);
         header('Location: /');
     }

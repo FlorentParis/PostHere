@@ -9,6 +9,8 @@ class User {
     private string $email;
     private string $password;
     private bool $admin;
+    private string $created_at;
+
 
     public function getId()
     {
@@ -58,5 +60,9 @@ class User {
 
     public function setAdmin(string $admin): void{
         $this->admin = $admin;
+    }
+
+    public function getCreatedAt(){
+        return date($this->created_at);
     }
 }
