@@ -14,6 +14,15 @@ class CommentManager extends BaseManager
         return $query->fetchAll(\PDO::FETCH_CLASS, Comment::class);
     }
 
+    public function getCommentById(int $id): Comment
+    {
+        $search = $this->pdo->prepare('SELECT * FROM commentaires WHERE id = ?');
+        $search->execute(array($id));
+        $search->setFetchMode(\PDO::FETCH_CLASS, Comment::class);
+        $comment = $search->fetch();
+        return $comment;
+    }
+
     public function createComment(Comment $comment)
     {
         $values = array($comment->getContent(),$comment->getPostId(), $comment->getAuthorId());
@@ -21,9 +30,10 @@ class CommentManager extends BaseManager
         $result->execute($values);
     }
 
-    public function updateComment(Post $post)
+    public function updateComment(array $values)
     {
-        // TODO - getPostById($post->getId())
+        $sql =  $this->pdo->prepare("UPDATE commentaires SET content=? WHERE id=?");
+        $sql->execute($values);
     }
 
     public function deleteCommentById(int $id)

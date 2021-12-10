@@ -5,7 +5,7 @@ namespace App\entity;
 class Post {
     private int $id;
     private string $title;
-    private string $image;
+    private $image;
     private string $content;
     private string $author_id;
     private string $created_at; 

@@ -56,7 +56,11 @@ class PostController extends BaseController
     }
 
     public function executeModifyPost(){
-        header('Location: /');
+        $this->render(
+            'test1.php',
+            [],
+            'EN COURS'
+        );
     }
 
     public function executeDeletePost(){

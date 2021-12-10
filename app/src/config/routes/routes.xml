@@ -18,11 +18,13 @@
     <route path="post" action="showPost" controller="PostController" params="id"/>
     <route path="createpost" action="createPost" controller="PostController"/>
     <route path="sendcreatepost" action="sendcreatepost" controller="PostController"/>
-    <route path="modifypost" action="modifyPost" controller="PostController" params="id"/>
+    <route path="updatepost" action="modifyPost" controller="PostController" params="id"/>
     <route path="deletepost" action="deletePost" controller="PostController" params="id"/>
     <!-- COMMENTAIRES  -->
     <route path="sendcommentaire" action="createComment" controller="CommentController" />
     <route path="deletecomment" action="deleteComment" controller="CommentController" params="id"/>
+    <route path="updatecomment" action="updateComment" controller="CommentController" params="id"/>
+    <route path="sendupdatecomment" action="sendUpdate" controller="CommentController"/>
     <!-- API -->
     <route path="api/posts" action="showPosts" controller="ApiController"/>
 </routes>
