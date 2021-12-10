@@ -5,6 +5,7 @@ namespace App\entity;
 class Post {
     private int $id;
     private string $title;
+    private string $image;
     private string $content;
     private string $author_id;
     private string $created_at; 
@@ -26,6 +27,14 @@ class Post {
 
     public function setTitle(string $title): void{
         $this->title = $title;
+    }
+
+    public function getImage(){
+        return $this->image;
+    }
+
+    public function setImage(string $image): void{
+        $this->image = $image;
     }
 
     public function getContent(){
