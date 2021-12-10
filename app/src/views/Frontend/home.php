@@ -12,6 +12,5 @@
             <?= substr($post->getContent(), 0, rand(150, 200)) . '...' ?>
             <?php echo '<a href="post/'.$post->getId().'">Lien</a>'; ?>
         </div>
-
     <?php } ?>
 </div>

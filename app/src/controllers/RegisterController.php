@@ -4,6 +4,7 @@ namespace App\controllers;
 
 use App\config\factories\PDOFactory;
 use App\config\utils\Flash;
+use App\entity\User;
 use App\models\UserManager;
 
 class RegisterController extends BaseController
@@ -31,8 +32,15 @@ class RegisterController extends BaseController
                 Flash::setFlash('alert', "Mot de passe diff");
                 header('Location: /inscription');
             }else{
+                $user = new User();
+                $user->setName($name);
+                $user->setFirstName($firstName);
+                $user->setEmail($email);
+                $user->setPassword($password);
+                //$user->setPassword(password_hash($password, PASSWORD_DEFAULT));
+                $user->setAdmin($admin);
                 $register = new UserManager(PDOFactory::getMysqlConnection());
-                $register->addUser($data);
+                $register->addUser($user);
                 Flash::setFlash('success', "Inscription success");
                 header('Location: /');
             }

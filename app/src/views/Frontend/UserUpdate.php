@@ -1,6 +1,7 @@
 <div class="container">
     <h1>Modification de <?= $user->getName()." ". $user->getFirstName()?></h1>
-    <?php echo "<form action='/sendUpdate/".$user->getId()."' method='post'>"?>
+    <form action='/sendUpdate' method='post'>
+    <input type="hidden" name="user_id" value="<?= $user->getId()?>">
         <div>
             <label for="name">Nom :</label>
             <input type="text" id="name" name="user_name" value="<?= $user->getName()?>">

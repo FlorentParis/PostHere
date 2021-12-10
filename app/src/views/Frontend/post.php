@@ -1,7 +1,7 @@
 <div class="m-4 border p-2">
     <div class="d-flex justify-content-between">
         <div>
-            <span><?= $post->getTitle() ?></span>
+            <h3><?= $post->getTitle() ?></h3>
             <div>
                 <span><?= $userManager->getUserById($post->getAuthorId())->getFirstName(); ?></span>
                 <span><?= date('\L\e\ d/M/Y \à\ H:i:s.', strtotime($post->getCreatedAt())) ?></span>
@@ -24,6 +24,17 @@
             </div>
         <?php } ?>
     </div>
-
     <div><?= $post->getContent() ?></div>
+</div>
+<div class="m-4 border p-2">
+    <h3>Ecrire un commentaire</h3>
+    <div class="d-flex justify-content-between">
+        <form action="sendCommentaire">
+            <div>
+                <label for="content">Votre commentaire</label>
+                <textarea name="content" class="w-100"></textarea>
+            </div>
+            <button>Envoyer</button>
+        </form>
+    </div>
 </div>

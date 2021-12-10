@@ -6,12 +6,12 @@ use App\entity\User;
 
 class UserManager extends BaseManager 
 {
-    public function addUser(array $data)
+    public function addUser(User $user)
     {
-        $sql = "INSERT INTO users(name, first_name, email, password, admin) VALUES ('".$data[0]."', '".$data[1]."', '".$data[2]."', '".$data[3]."','".$data[4]."')";
+        $values = array($user->getName(), $user->getFirstName(), $user->getEmail(), $user->getPassword(), $user->getAdmin());
+        $sql = "INSERT INTO users(name, first_name, email, password, admin) VALUES (?, ?, ?, ?, ?)";
         $result = $this->pdo->prepare($sql);
-        $result->execute($data);
-        //var_dump($result);
+        $result->execute($values);
     }
 
     public function getAllUser(): array

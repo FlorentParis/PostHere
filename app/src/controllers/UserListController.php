@@ -12,17 +12,25 @@ class UserListController extends BaseController
 {
     public function executeShowList()
     {
-        $user = new UserManager(PDOFactory::getMysqlConnection());
-        $user_list = $user->getAllUser();
-        //var_dump($user_list);
-        //TODO - SI API return $user_list en json
-        $this->render(
-            'UserList.php',
-            [
-                'user_list' => $user_list
-            ],
-            'LISTE'
-        );
+        if($_SESSION['user_actual']['admin'] == 1){
+            $user = new UserManager(PDOFactory::getMysqlConnection());
+            $user_list = $user->getAllUser();
+            //var_dump($user_list);
+            //TODO - SI API return $user_list en json
+            $this->render(
+                'UserList.php',
+                [
+                    'user_list' => $user_list
+                ],
+                'LISTE'
+            );
+        }else{
+            $this->render(
+                '404.php',
+                [],
+                'Erreur'
+            );
+        }
     }
 
     public function executeDeleteUser(){
@@ -43,7 +51,7 @@ class UserListController extends BaseController
 
     public function executeSendUpdate()
     {
-        $id = $this->params['id'];
+        $id = $_POST['user_id'];
         $name = $_POST['user_name'];
         $firstName = $_POST['user_firstname'];
         $email = $_POST['user_mail'];
