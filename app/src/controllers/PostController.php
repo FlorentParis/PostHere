@@ -37,11 +37,7 @@ class PostController extends BaseController
             $post->setTitle($_POST['title']);
             $post->setContent($_POST['content']);
             $post->setAuthorId($_SESSION['user_actual']['id']);
-            if(isset($_FILES['file'])){
-                $tmpName = $_FILES['file']['tmp_name'];
-                $name = $_FILES['file']['name'];
-                move_uploaded_file($tmpName, './upload/'.$name);
-            }
+            $post->setImage(file_get_contents($_FILES['image']['tmp_name']));
             $PostManager = new PostManager(PDOFactory::getMysqlConnection());
             $PostManager->createPost($post);
             header('Location: /');

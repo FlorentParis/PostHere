@@ -24,8 +24,8 @@ class PostManager extends BaseManager
 
     public function createPost(Post $post)
     {
-        $values = array($post->getTitle(), $post->getContent(), $post->getAuthorId());
-        $result = $this->pdo->prepare("INSERT INTO `posts` (title, content, author_id) VALUES (?, ?, ?)");
+        $values = array($post->getTitle(), $post->getImage(), $post->getContent(), $post->getAuthorId());
+        $result = $this->pdo->prepare("INSERT INTO `posts` (title, image, content, author_id) VALUES (?, ?, ?, ?)");
         $result->execute($values);
     }
 

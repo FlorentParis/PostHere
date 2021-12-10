@@ -4,8 +4,8 @@
         <input type="text" name="title" class="w-25">
     </div>
     <div class="d-flex flex-column">
-        <label for="picture">Image</label>
-        <input type="file" name="picture">
+        <label for="image">Image</label>
+        <input type="file" name="image">
     </div>
     <div>
         <label for="content">Contenu</label>
