@@ -22,6 +22,7 @@
     <route path="deletepost" action="deletePost" controller="PostController" params="id"/>
     <!-- COMMENTAIRES  -->
     <route path="sendcommentaire" action="createComment" controller="CommentController" />
+    <route path="deletecomment" action="deleteComment" controller="CommentController" params="id"/>
     <!-- API -->
     <route path="api/posts" action="showPosts" controller="ApiController"/>
 </routes>

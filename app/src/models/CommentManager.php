@@ -28,7 +28,7 @@ class CommentManager extends BaseManager
 
     public function deleteCommentById(int $id)
     {
-        $query = $this->pdo->prepare('DELETE FROM posts WHERE id = ?');
+        $query = $this->pdo->prepare('DELETE FROM commentaires WHERE id = ?');
         $query->execute(array($id));
     }
 }

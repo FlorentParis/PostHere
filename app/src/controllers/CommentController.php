@@ -46,8 +46,8 @@ class CommentController extends BaseController
     }
 
     public function executeDeleteComment(){
-        $post = new PostManager(PDOFactory::getMysqlConnection());
-        $deletepost = $post->deletePostById($this->params['id']);
-        header('Location: /');
+        $comment = new CommentManager(PDOFactory::getMysqlConnection());
+        $comment->deleteCommentById($this->params['id']);
+        header('Location: ' . $_SERVER['HTTP_REFERER']);
     }
 }
